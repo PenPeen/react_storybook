@@ -1,0 +1,24 @@
+.m-file-input__heading {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.m-file-input__button {
+  cursor: pointer;
+  align-items: center;
+  background-color: #fff;
+  border: solid 1px rgb(0, 121, 173);
+  border-radius: 4px;
+  color: rgb(0, 121, 173);
+  display: flex;
+  font-weight: 600;
+  gap: 4px;
+  padding: 4px 12px;
+}
+
+.m-file-input__message {
+  color: rgb(45, 64, 72);
+  font-size: 12px;
+  margin-top: 4px;
+}
