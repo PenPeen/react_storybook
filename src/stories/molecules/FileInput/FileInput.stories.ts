@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import FileInput from "./FileInput";
 import { fn } from "@storybook/test";
+import FileInputContainer from "./FileInputContainer";
 
 const meta = {
   title: "Molecules/FileInput",
-  component: FileInput,
+  component: FileInputContainer,
   parameters: {
     layout: "centered",
   },
@@ -12,7 +12,7 @@ const meta = {
     handleFileSelect: fn(),
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof FileInput>;
+} satisfies Meta<typeof FileInputContainer>;
 
 export default meta;
 
@@ -21,7 +21,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     heading: "FIle",
-    message: "画像サイズは250MBまで",
+    message: "※画像サイズは2.4MBまで",
   },
 };
 
