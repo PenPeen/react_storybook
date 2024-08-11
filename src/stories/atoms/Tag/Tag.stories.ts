@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import Tag from "./Tag";
+import TagContainer from "./TagContainer";
 
 const meta = {
   title: "Atoms/Tag",
-  component: Tag,
+  component: TagContainer,
   parameters: {
     layout: "centered",
   },
@@ -13,7 +13,7 @@ const meta = {
     backgroundColor: { control: "color" },
   },
   args: { onClick: fn() },
-} satisfies Meta<typeof Tag>;
+} satisfies Meta<typeof TagContainer>;
 
 export default meta;
 
