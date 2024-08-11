@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import parse from "html-react-parser";
-import Accordion from "./Accordion";
+import AccordionContainer from "./Accordion";
 
 const meta = {
   title: "Molecules/Accordion",
-  component: Accordion,
+  component: AccordionContainer,
   parameters: {
     layout: "centered",
   },
   tags: ["autodocs"],
-} satisfies Meta<typeof Accordion>;
+} satisfies Meta<typeof AccordionContainer>;
 
 export default meta;
 
