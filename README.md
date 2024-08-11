@@ -12,5 +12,5 @@
 
 ## コンポーネント管理
 
-コンポーネントはAtomic Designに沿って開発をする
-名前空間として、Atoms / Molecules / Organisms / Templates / Pages いずれかのプレフィックスをメタデータのタイトルに指定することとする。
+コンポーネントは`Atomic Design`に沿って開発をする<br>
+名前空間として、`Atoms` / `Molecules` / `Organisms` / `Templates` / `Pages` いずれかのプレフィックスをメタデータのタイトルに指定することとする。
