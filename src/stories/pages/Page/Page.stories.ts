@@ -4,7 +4,7 @@ import { within, userEvent, expect } from "@storybook/test";
 import { Page } from "./Page";
 
 const meta = {
-  title: "Template/Page",
+  title: "Page/Page",
   component: Page,
   parameters: {
     layout: "fullscreen",
