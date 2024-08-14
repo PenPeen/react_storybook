@@ -12,7 +12,7 @@ const meta = {
   argTypes: {
     backgroundColor: { control: "color" },
   },
-  args: { onClick: fn() },
+  args: { handleClick: fn() },
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -43,5 +43,12 @@ export const Small: Story = {
   args: {
     size: "small",
     label: "Button",
+  },
+};
+
+export const Radius: Story = {
+  args: {
+    label: "Button",
+    isRadius: true,
   },
 };
