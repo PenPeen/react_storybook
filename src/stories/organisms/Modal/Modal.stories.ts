@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import parse from "html-react-parser";
-import "./modal.css";
 
 import Modal from "./ModalContainer";
 import { fn } from "@storybook/test";

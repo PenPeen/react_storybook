@@ -1,4 +1,4 @@
-.o-modal__contents {
+.o_modal__contents {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -12,7 +12,7 @@
   outline: transparent;
 }
 
-.o-modal__overlay {
+.o_modal__overlay {
   position: fixed;
   top: 0;
   right: 0;
@@ -24,21 +24,25 @@
   z-index: 999;
 }
 
-.ReactModal__Overlay--after-open.o-modal__overlay {
+.o_modal__overlay__before_open {
+  opacity: 0;
+}
+
+.o_modal__overlay__open {
   opacity: 1;
 }
 
-.o-modal__ok_button {
+.o_modal__ok_button {
   margin-top: 16px;
   margin-right: 8px;
 }
 
-.o-modal__cancel_button {
+.o_modal__cancel_button {
   margin-top: 16px;
   margin-right: 8px;
 }
 
-.o-modal__close_button {
+.o_modal__close_button {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -48,7 +52,7 @@
   cursor: pointer;
 }
 
-.o-modal__button_wrapper {
+.o_modal__button_wrapper {
   display: flex;
   justify-content: flex-end;
 }
