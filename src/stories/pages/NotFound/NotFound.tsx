@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./not_found.css";
+import styles from "./not_found.module.css";
 
 type NotFoundProps = {
   title?: string;
@@ -16,11 +16,11 @@ const NotFound: React.FC<NotFoundProps> = ({
   linkText = "Site Top",
 }) => {
   return (
-    <div className='p-not-found'>
+    <div className={styles.p_not_found}>
       <h1>{title}</h1>
       <p>{message}</p>
       {link && (
-        <a href={link} className='p-not-found__top-link'>
+        <a href={link} className={styles.p_not_found__top_link}>
           {linkText}
         </a>
       )}

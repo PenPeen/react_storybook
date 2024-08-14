@@ -1,11 +1,11 @@
-.p-not-found {
+.p_not_found {
   text-align: center;
   max-width: 1280px;
   padding: 2rem;
   margin: 0 auto;
 }
 
-.p-not-found__top-link {
+.p_not_found__top_link {
   display: block;
   text-align: center;
 }
