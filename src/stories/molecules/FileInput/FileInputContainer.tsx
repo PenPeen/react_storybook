@@ -1,5 +1,4 @@
 import { ChangeEventHandler, useRef } from "react";
-import "./file-input.css";
 import FileInputPresentational from "./FileInputPresentational";
 
 export interface FileInputContainerProps {

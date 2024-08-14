@@ -1,5 +1,5 @@
 import { ChangeEventHandler } from "react";
-import "./file-input.css";
+import styles from "./file-input.module.css";
 import { FileInputContainerProps } from "./FileInputContainer";
 
 interface FileInputPresentationalProps extends FileInputContainerProps {
@@ -18,13 +18,13 @@ const FileInputPresentational: React.FC<FileInputPresentationalProps> = ({
 }) => {
   return (
     <>
-      <div className='m-file-input'>
+      <div className={styles.m_file_input}>
         {heading && (
-          <div className='m-file-input__heading'>
-            <label htmlFor='m-file-input__button'>{heading}</label>
+          <div className={styles.m_file_input__heading}>
+            <label htmlFor={styles.m_file_input__button}>{heading}</label>
           </div>
         )}
-        <div className='m-file-input__content'>
+        <div className={styles.m_file_input__content}>
           <input
             type='file'
             style={{ display: "none" }}
@@ -32,8 +32,8 @@ const FileInputPresentational: React.FC<FileInputPresentationalProps> = ({
             onChange={handleFileSelect}
           />
           <button
-            className='m-file-input__button'
-            id='m-file-input__button'
+            className={styles.m_file_input__button}
+            id={styles.m_file_input__button}
             onClick={handleButtonClick}
           >
             <img src='/file.svg' className='logo' alt='file logo' />
@@ -41,7 +41,7 @@ const FileInputPresentational: React.FC<FileInputPresentationalProps> = ({
           </button>
         </div>
         {message && (
-          <div className='m-file-input__message'>
+          <div className={styles.m_file_input__message}>
             <span>{message}</span>
           </div>
         )}
