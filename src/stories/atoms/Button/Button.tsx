@@ -1,5 +1,5 @@
 import React from "react";
-import "./button.css";
+import styles from "./button.module.css";
 
 interface ButtonProps {
   primary?: boolean;
@@ -19,13 +19,18 @@ export const Button: React.FC<ButtonProps> = ({
   handleClick,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? "a-button--primary" : "a-button--secondary";
-  const radius = isRadius && "a-button--radius";
+  const mode = primary ? styles.a_button__primary : styles.a_button__secondary;
+  const radius = isRadius && styles.a_button__radius;
 
   return (
     <button
       type='button'
-      className={["a-button", `a-button--${size}`, mode, radius].join(" ")}
+      className={[
+        styles.a_button,
+        styles[`a_button__${size}`],
+        mode,
+        radius,
+      ].join(" ")}
       style={{ backgroundColor }}
       {...props}
       onClick={handleClick}
