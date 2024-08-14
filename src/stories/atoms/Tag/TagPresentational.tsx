@@ -1,4 +1,4 @@
-import "./tag.css";
+import styles from "./tag.module.css";
 
 type TagPresentationalProps = {
   backgroundColor?: string;
@@ -19,8 +19,10 @@ const TagPresentational: React.FC<TagPresentationalProps> = ({
 }) => {
   return (
     <button
-      type="button"
-      className={["a-tag", `a-tag--${size}`, mode, ovaled].join(" ")}
+      type='button'
+      className={[styles.a_tag, styles[`a_tag__${size}`], mode, ovaled].join(
+        " "
+      )}
       style={{ backgroundColor }}
       onClick={handleOnClick}
     >

@@ -1,4 +1,4 @@
-import "./tag.css";
+import styles from "./tag.module.css";
 import TagPresentational from "./TagPresentational";
 
 type TagContainerProps = {
@@ -18,8 +18,8 @@ const TagContainer: React.FC<TagContainerProps> = ({
   label,
   onClick,
 }) => {
-  const mode = primary ? "a-tag--primary" : "a-tag--secondary";
-  const ovaled = oval ? "a-tag--oval" : undefined;
+  const mode = primary ? styles.a_tag__primary : styles.a_tag__secondary;
+  const ovaled = oval ? styles.a_tag__oval : undefined;
 
   return (
     <TagPresentational
