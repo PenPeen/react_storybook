@@ -21,6 +21,7 @@
   background-color: rgba(0, 0, 0, 0.4);
   opacity: 0;
   transition: opacity 200ms ease-in-out;
+  z-index: 999;
 }
 
 .ReactModal__Overlay--after-open.o-modal__overlay {

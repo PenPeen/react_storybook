@@ -6,11 +6,11 @@ import {
 import React, { PropsWithChildren, useEffect, useRef } from "react";
 import AccordionPresentational from "./AccordionPresentational";
 
-type AccordionContainerProps = {
+export interface AccordionContainerProps {
   primary?: boolean;
   label: string;
   duration?: number;
-};
+}
 
 const IS_OPENED_CLASS = "m-accordion--opened";
 

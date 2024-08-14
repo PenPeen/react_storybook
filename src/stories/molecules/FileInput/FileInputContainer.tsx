@@ -2,12 +2,12 @@ import { ChangeEventHandler, useRef } from "react";
 import "./file-input.css";
 import FileInputPresentational from "./FileInputPresentational";
 
-type FileInputContainerProps = {
+export interface FileInputContainerProps {
   heading?: string;
   label?: string;
   message?: string;
   handleFileSelect?: ChangeEventHandler<HTMLInputElement>;
-};
+}
 
 const FileInputContainer: React.FC<FileInputContainerProps> = ({
   heading,
