@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from "react";
-import "./accordion.css";
+import styles from "./accordion.module.css";
 import { AccordionContainerProps } from "./Accordion";
 
 interface AccordionPresentationalProps extends AccordionContainerProps {
@@ -18,15 +18,18 @@ const AccordionPresentational: React.FC<
   children,
 }) => {
   return (
-    <details className={["m-accordion", mode].join(" ")}>
-      <summary className='m-accordion__summary' onClick={handleSummaryClick}>
-        <span className='m-accordion__summary-inner'>
+    <details className={[styles.m_accordion, mode].join(" ")}>
+      <summary
+        className={styles.m_accordion__summary}
+        onClick={handleSummaryClick}
+      >
+        <span className={styles.m_accordion__summary_inner}>
           {label}
-          <span className='m-accordion__icon'></span>
+          <span className={styles.m_accordion__icon}></span>
         </span>
       </summary>
-      <div className='m-accordion__content' ref={contentRef}>
-        <div className='m-accordion__content-inner'>{children}</div>
+      <div className={styles.m_accordion__content} ref={contentRef}>
+        <div className={styles.m_accordion__content_inner}>{children}</div>
       </div>
     </details>
   );

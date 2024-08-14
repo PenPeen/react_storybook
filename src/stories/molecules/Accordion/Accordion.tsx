@@ -5,6 +5,7 @@ import {
 } from "@/stories/utlils/animations";
 import React, { PropsWithChildren, useEffect, useRef } from "react";
 import AccordionPresentational from "./AccordionPresentational";
+import styles from "./accordion.module.css";
 
 export interface AccordionContainerProps {
   primary?: boolean;
@@ -12,12 +13,14 @@ export interface AccordionContainerProps {
   duration?: number;
 }
 
-const IS_OPENED_CLASS = "m-accordion--opened";
+const IS_OPENED_CLASS = styles.m_accordion__opened;
 
 const AccordionContainer: React.FC<
   AccordionContainerProps & PropsWithChildren
 > = ({ primary = true, label, duration = 300, children }) => {
-  const mode = primary ? "m-accordion--primary" : "m-accordion--secondary";
+  const mode = primary
+    ? styles.m_accordion__primary
+    : styles.m_accordion__secondary;
   const contentRef = useRef<HTMLDivElement>(null);
   const detailsRef = useRef<HTMLDetailsElement | null>(null);
 
