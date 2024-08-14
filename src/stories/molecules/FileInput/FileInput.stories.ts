@@ -20,13 +20,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    heading: "FIle",
+    heading: "File",
     message: "※画像サイズは2.4MBまで",
   },
 };
 
 export const CustomLabel: Story = {
   args: {
+    heading: "File",
     label: "CustomLabel",
   },
 };
