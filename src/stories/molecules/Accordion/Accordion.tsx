@@ -1,9 +1,9 @@
-import React, { PropsWithChildren, useEffect, useRef } from "react";
 import {
   animTiming,
   closingAnimKeyframes,
   openingAnimKeyframes,
-} from "../../utlils/animations";
+} from "@/stories/utlils/animations";
+import React, { PropsWithChildren, useEffect, useRef } from "react";
 import AccordionPresentational from "./AccordionPresentational";
 
 type AccordionContainerProps = {
