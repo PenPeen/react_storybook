@@ -1,10 +1,10 @@
-.m-file-input__heading {
+.m_file_input__heading {
   font-weight: 600;
   font-size: 14px;
   margin-bottom: 4px;
 }
 
-.m-file-input__button {
+.m_file_input__button {
   cursor: pointer;
   align-items: center;
   background-color: #fff;
@@ -17,7 +17,7 @@
   padding: 4px 12px;
 }
 
-.m-file-input__message {
+.m_file_input__message {
   color: rgb(45, 64, 72);
   font-size: 12px;
   margin-top: 4px;

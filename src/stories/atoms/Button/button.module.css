@@ -1,4 +1,4 @@
-.a-button {
+.a_button {
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
   border: 0;
@@ -7,40 +7,40 @@
   line-height: 1;
 }
 
-.a-button--primary {
+.a_button__primary {
   color: white;
   background-color: #1ea7fd;
 }
 
-.a-button--primary:hover {
+.a_button__primary:hover {
   background-color: #1391cc;
 }
 
-.a-button--secondary {
+.a_button__secondary {
   color: #333;
   background-color: transparent;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
 }
 
-.a-button--secondary:hover {
+.a_button__secondary:hover {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px 1.5px inset;
 }
 
-.a-button--small {
+.a_button__small {
   font-size: 12px;
   padding: 10px 16px;
 }
 
-.a-button--medium {
+.a_button__medium {
   font-size: 14px;
   padding: 11px 20px;
 }
 
-.a-button--large {
+.a_button__large {
   font-size: 16px;
   padding: 12px 24px;
 }
 
-.a-button--radius {
+.a_button__radius {
   border-radius: 3em;
 }

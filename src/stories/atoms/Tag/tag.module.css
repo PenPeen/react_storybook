@@ -1,4 +1,4 @@
-.a-tag {
+.a_tag {
   display: inline-block;
   margin: 0 0.1em 0.6em 0;
   padding: 0.6em;
@@ -7,34 +7,34 @@
   color: #7d7d7d;
 }
 
-.a-tag:before {
+.a_tag:before {
   content: "#";
   margin-right: 2px;
 }
 
-.a-tag--primary {
+.a_tag__primary {
   color: #274a78;
   background-color: #fff;
   border: 1px solid #274a78;
 }
-.a-tag--secondary {
+.a_tag__secondary {
   background-color: #fff;
   border: 1px solid #7d7d7d;
 }
 
-.a-tag--oval {
+.a_tag__oval {
   border-radius: 2em;
 }
 
-.a-tag--small {
+.a_tag__small {
   font-size: 12px;
   padding: 10px 16px;
 }
-.a-tag--medium {
+.a_tag__medium {
   font-size: 14px;
   padding: 11px 20px;
 }
-.a-tag--large {
+.a_tag__large {
   font-size: 16px;
   padding: 12px 24px;
 }
