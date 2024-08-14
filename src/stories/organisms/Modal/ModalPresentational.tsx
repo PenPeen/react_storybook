@@ -5,15 +5,10 @@ import { Button } from "@/stories/atoms/Button/Button";
 import { ModalProps } from "./ModalContainer";
 import styles from "./modal.module.css";
 
-interface ModalPresentationalProps extends ModalProps {
-  showModal: boolean;
-  handleOpenModal: () => void;
-  handleCloseModal: () => void;
-}
-
-const ModalPresentational: React.FC<
-  ModalPresentationalProps & PropsWithChildren
-> = ({
+const ModalPresentational: React.FC<ModalProps & PropsWithChildren> = ({
+  showModal,
+  handleOpenModal,
+  handleCloseModal,
   openLabel = "Open Modal",
   cancelLabel = "CANCEL",
   okLabel = "OK",
@@ -23,9 +18,6 @@ const ModalPresentational: React.FC<
   isCancelButton = true,
   isOkButton = true,
   handleOK = () => {},
-  showModal,
-  handleOpenModal,
-  handleCloseModal,
 }) => {
   return (
     <div className={styles.o_modal}>
