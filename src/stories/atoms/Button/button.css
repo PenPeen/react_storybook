@@ -2,7 +2,6 @@
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
   border: 0;
-  border-radius: 3em;
   cursor: pointer;
   display: inline-block;
   line-height: 1;
@@ -13,10 +12,18 @@
   background-color: #1ea7fd;
 }
 
+.a-button--primary:hover {
+  background-color: #1391cc;
+}
+
 .a-button--secondary {
   color: #333;
   background-color: transparent;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+}
+
+.a-button--secondary:hover {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px 1.5px inset;
 }
 
 .a-button--small {
@@ -32,4 +39,8 @@
 .a-button--large {
   font-size: 16px;
   padding: 12px 24px;
+}
+
+.a-button--radius {
+  border-radius: 3em;
 }
