@@ -7,7 +7,6 @@ interface ButtonProps {
   size?: "small" | "medium" | "large";
   label: string;
   isRadius?: boolean;
-  customClass?: string[];
   handleClick?: () => void;
 }
 
@@ -17,7 +16,6 @@ export const Button: React.FC<ButtonProps> = ({
   backgroundColor,
   label,
   isRadius,
-  customClass,
   handleClick,
   ...props
 }: ButtonProps) => {
@@ -27,13 +25,7 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <button
       type='button'
-      className={[
-        "a-button",
-        `a-button--${size}`,
-        mode,
-        radius,
-        customClass,
-      ].join(" ")}
+      className={["a-button", `a-button--${size}`, mode, radius].join(" ")}
       style={{ backgroundColor }}
       {...props}
       onClick={handleClick}
