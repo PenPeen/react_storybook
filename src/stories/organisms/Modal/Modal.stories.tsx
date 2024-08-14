@@ -28,6 +28,7 @@ export interface ModalAnyProps {
   isOpenButton?: boolean;
   isCloseButton?: boolean;
   isCancelButton?: boolean;
+  isScrollable?: boolean;
   isOkButton?: boolean;
   handleOK?: (event?: React.MouseEvent<HTMLButtonElement>) => void;
 }
@@ -76,6 +77,22 @@ export const onlyContents: StoryWithHooks = {
         isCancelButton={false}
         isCloseButton={false}
         isOkButton={false}
+      >
+        <h3>Modal</h3>
+        <div>開閉状態の管理は"useModal.ts"カスタムフックを利用して行う</div>
+      </ModalWithHooks>
+    );
+  },
+};
+
+export const CanScrollable: StoryWithHooks = {
+  render: () => {
+    return (
+      <ModalWithHooks
+        isCancelButton={false}
+        isCloseButton={false}
+        isOkButton={false}
+        isScrollable
       >
         <h3>Modal</h3>
         <div>開閉状態の管理は"useModal.ts"カスタムフックを利用して行う</div>
