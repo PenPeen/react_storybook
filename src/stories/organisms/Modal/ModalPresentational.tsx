@@ -4,6 +4,7 @@ import closeLogo from "@/assets/close.svg";
 import { Button } from "@/stories/atoms/Button/Button";
 import { ModalProps } from "./ModalContainer";
 import styles from "./modal.module.css";
+import { createPortal } from "react-dom";
 
 const ModalPresentational: React.FC<ModalProps & PropsWithChildren> = ({
   showModal,
@@ -18,14 +19,10 @@ const ModalPresentational: React.FC<ModalProps & PropsWithChildren> = ({
   isCancelButton = true,
   isOkButton = true,
   handleOK = () => {},
+  modalRoot,
 }) => {
-  return (
+  const modalContents = (
     <div className={styles.o_modal}>
-      {isOpenButton && (
-        <span className={styles.o_modal__ok_button}>
-          <Button primary handleClick={handleOpenModal} label={openLabel} />
-        </span>
-      )}
       <ReactModal
         isOpen={showModal}
         onRequestClose={handleCloseModal}
@@ -66,6 +63,17 @@ const ModalPresentational: React.FC<ModalProps & PropsWithChildren> = ({
         )}
       </ReactModal>
     </div>
+  );
+
+  return (
+    <>
+      {isOpenButton && (
+        <span className={styles.o_modal__ok_button}>
+          <Button primary handleClick={handleOpenModal} label={openLabel} />
+        </span>
+      )}
+      {modalRoot && createPortal(modalContents, modalRoot)}
+    </>
   );
 };
 
