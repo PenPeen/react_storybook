@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useEffect } from "react";
+import React, { PropsWithChildren, useEffect, useState } from "react";
 import ModalPresentational from "./ModalPresentational";
 import styles from "./modal.module.css";
 
@@ -15,6 +15,7 @@ export interface ModalProps {
   isOkButton?: boolean;
   isScrollable?: boolean;
   handleOK?: (event?: React.MouseEvent<HTMLButtonElement>) => void;
+  modalRoot: HTMLDivElement;
 }
 
 const body = document.querySelector("body");
@@ -34,6 +35,23 @@ const Modal: React.FC<ModalProps & PropsWithChildren> = ({
   isScrollable = false,
   handleOK = () => {},
 }) => {
+  const [modalRoot, setModalRoot] = useState<HTMLDivElement>();
+
+  useEffect(() => {
+    let root = document.getElementById("modal-portal") as HTMLDivElement;
+
+    if (!root) {
+      root = document.createElement("div");
+      root.setAttribute("id", "modal-portal");
+      document.body.appendChild(root);
+    }
+    setModalRoot(root);
+
+    return () => {
+      document.body.removeChild(root);
+    };
+  }, []);
+
   useEffect(() => {
     if (body == undefined || isScrollable) return;
 
@@ -60,6 +78,7 @@ const Modal: React.FC<ModalProps & PropsWithChildren> = ({
         isOkButton={isOkButton}
         isScrollable={isScrollable}
         handleOK={handleOK}
+        modalRoot={modalRoot!}
       />
     </>
   );

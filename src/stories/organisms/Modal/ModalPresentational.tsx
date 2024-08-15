@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useEffect, useState } from "react";
+import React, { PropsWithChildren } from "react";
 import ReactModal from "react-modal";
 import closeLogo from "@/assets/close.svg";
 import { Button } from "@/stories/atoms/Button/Button";
@@ -19,24 +19,8 @@ const ModalPresentational: React.FC<ModalProps & PropsWithChildren> = ({
   isCancelButton = true,
   isOkButton = true,
   handleOK = () => {},
+  modalRoot,
 }) => {
-  const [modalRoot, setModalRoot] = useState<HTMLElement>();
-
-  useEffect(() => {
-    let root = document.getElementById("portal-root");
-
-    if (!root) {
-      root = document.createElement("div");
-      root.setAttribute("id", "portal-root");
-      document.body.appendChild(root);
-    }
-    setModalRoot(root);
-
-    return () => {
-      document.body.removeChild(root);
-    };
-  }, []);
-
   const modalContents = (
     <div className={styles.o_modal}>
       <ReactModal
