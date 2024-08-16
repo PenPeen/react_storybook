@@ -26,6 +26,11 @@ export const LoggedIn: Story = {
     },
   },
 };
+export const Fixed: Story = {
+  args: {
+    isFixed: true,
+  },
+};
 
 export const LoggedOut: Story = {};
 
