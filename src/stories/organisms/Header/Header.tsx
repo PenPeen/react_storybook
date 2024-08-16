@@ -1,69 +1,95 @@
 import { Button } from "@/stories/atoms/Button/Button";
-import "./header.css";
+import styles from "./header.module.css";
 
 type User = {
   name: string;
 };
 
+type Navigation = {
+  text: string;
+  url: string;
+};
+
+type Navigations = Navigation[];
+
 export interface HeaderProps {
+  title?: string;
+  logoUrl?: string;
   user?: User;
+  navigations?: Navigations;
+  isDark?: boolean;
   onLogin?: () => void;
   onLogout?: () => void;
-  onCreateAccount?: () => void;
 }
 
 export const Header = ({
+  title = "PenPeen",
+  logoUrl = "./vite.svg",
   user,
-  onLogin,
-  onLogout,
-  onCreateAccount,
-}: HeaderProps) => (
-  <header>
-    <div className='storybook-header'>
-      <div>
-        <svg
-          width='32'
-          height='32'
-          viewBox='0 0 32 32'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <g fill='none' fillRule='evenodd'>
-            <path
-              d='M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z'
-              fill='#FFF'
-            />
-            <path
-              d='M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z'
-              fill='#555AB9'
-            />
-            <path
-              d='M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z'
-              fill='#91BAF8'
-            />
-          </g>
-        </svg>
-        <h1>Acme</h1>
+  navigations,
+  isDark = false,
+  onLogin = () => {},
+  onLogout = () => {},
+}: HeaderProps) => {
+  const mode = isDark
+    ? [styles.o_header, styles.o_header__dark].join(" ")
+    : styles.o_header;
+  const buttonType = isDark ? "neutral" : "primary";
+
+  return (
+    <header>
+      <div className={mode}>
+        <div>
+          <div className={styles.o_header__left_contents}>
+            <a href='/' className={styles.o_header__top_link}>
+              {logoUrl && (
+                <img
+                  className={styles.o_header__logo}
+                  src={logoUrl}
+                  alt='logo'
+                />
+              )}
+              {title && <h1 className={styles.o_header__title}>{title}</h1>}
+            </a>
+            {navigations ? (
+              <nav className={styles.o_header__navigation}>
+                <ul className={styles.o_header__navigation_ul}>
+                  {navigations.map((navigation) => {
+                    return (
+                      <li>
+                        <a href={navigation.url}>{navigation.text}</a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </nav>
+            ) : (
+              <></>
+            )}
+          </div>
+        </div>
+        <div>
+          {user ? (
+            <>
+              <Button
+                type={buttonType}
+                size='small'
+                handleClick={onLogout}
+                label='Log out'
+              />
+            </>
+          ) : (
+            <>
+              <Button
+                type={buttonType}
+                size='small'
+                handleClick={onLogin}
+                label='Log in'
+              />
+            </>
+          )}
+        </div>
       </div>
-      <div>
-        {user ? (
-          <>
-            <span className='welcome'>
-              Welcome, <b>{user.name}</b>!
-            </span>
-            <Button size='small' onClick={onLogout} label='Log out' />
-          </>
-        ) : (
-          <>
-            <Button size='small' onClick={onLogin} label='Log in' />
-            <Button
-              primary
-              size='small'
-              onClick={onCreateAccount}
-              label='Sign up'
-            />
-          </>
-        )}
-      </div>
-    </div>
-  </header>
-);
+    </header>
+  );
+};

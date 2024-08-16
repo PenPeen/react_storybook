@@ -13,7 +13,6 @@ const meta = {
   args: {
     onLogin: fn(),
     onLogout: fn(),
-    onCreateAccount: fn(),
   },
 } satisfies Meta<typeof Header>;
 
@@ -29,3 +28,42 @@ export const LoggedIn: Story = {
 };
 
 export const LoggedOut: Story = {};
+
+export const WithNavlink: Story = {
+  args: {
+    navigations: [
+      {
+        text: "nav1",
+        url: "/nav1",
+      },
+      {
+        text: "nav2",
+        url: "/nav2",
+      },
+      {
+        text: "nav3",
+        url: "/nav3",
+      },
+    ],
+  },
+};
+
+export const Dark: Story = {
+  args: {
+    isDark: true,
+    navigations: [
+      {
+        text: "nav1",
+        url: "/nav1",
+      },
+      {
+        text: "nav2",
+        url: "/nav2",
+      },
+      {
+        text: "nav3",
+        url: "/nav3",
+      },
+    ],
+  },
+};
