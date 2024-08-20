@@ -70,3 +70,10 @@ export const Radius: Story = {
     isRadius: true,
   },
 };
+
+export const Full: Story = {
+  args: {
+    label: "Button",
+    isFull: true,
+  }
+}
