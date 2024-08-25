@@ -8,6 +8,7 @@ import AccordionPresentational from "./AccordionPresentational";
 import styles from "./accordion.module.css";
 
 export interface AccordionContainerProps {
+  isOpen?: boolean;
   primary?: boolean;
   label: string;
   duration?: number;
@@ -17,7 +18,7 @@ const IS_OPENED_CLASS = styles.m_accordion__opened;
 
 const AccordionContainer: React.FC<
   AccordionContainerProps & PropsWithChildren
-> = ({ primary = true, label, duration = 300, children }) => {
+> = ({ isOpen = false, primary = true, label, duration = 300, children }) => {
   const mode = primary
     ? styles.m_accordion__primary
     : styles.m_accordion__secondary;
@@ -27,6 +28,9 @@ const AccordionContainer: React.FC<
   useEffect(() => {
     if (contentRef.current) {
       detailsRef.current = contentRef.current.parentNode as HTMLDetailsElement;
+      if(detailsRef.current && isOpen) {
+        detailsRef.current.classList.add(IS_OPENED_CLASS);
+      }
     }
   }, []);
 
@@ -67,6 +71,7 @@ const AccordionContainer: React.FC<
 
   return (
     <AccordionPresentational
+      isOpen = {isOpen}
       label={label}
       mode={mode}
       handleSummaryClick={handleSummaryOnClick}

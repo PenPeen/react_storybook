@@ -11,6 +11,7 @@ interface AccordionPresentationalProps extends AccordionContainerProps {
 const AccordionPresentational: React.FC<
   PropsWithChildren<AccordionPresentationalProps>
 > = ({
+  isOpen,
   label = "ファイルをアップロード",
   mode,
   handleSummaryClick,
@@ -18,7 +19,7 @@ const AccordionPresentational: React.FC<
   children,
 }) => {
   return (
-    <details className={[styles.m_accordion, mode].join(" ")}>
+    <details open={Boolean(isOpen)} className={[styles.m_accordion, mode].join(" ")}>
       <summary
         className={styles.m_accordion__summary}
         onClick={handleSummaryClick}
