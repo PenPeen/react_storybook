@@ -35,3 +35,14 @@ export const Secondary: Story = {
     `),
   },
 };
+
+export const isOpend: Story = {
+  args: {
+    isOpen: true,
+    label: "Q. アコーディオンの作成は簡単ですか？",
+    children: parse(`
+      <strong>Answer</strong>
+      <div>少し大変でした。</div>
+    `),
+  },
+};
