@@ -1,21 +1,22 @@
+import { PropsWithChildren } from "react";
 import styles from "./tag.module.css";
 
 type TagPresentationalProps = {
   backgroundColor?: string;
-  label: string;
   size: "small" | "medium" | "large";
   mode: string;
   ovaled?: string;
   handleOnClick?: () => void;
+  children: React.ReactNode
 };
 
-const TagPresentational: React.FC<TagPresentationalProps> = ({
+const TagPresentational: React.FC<TagPresentationalProps & PropsWithChildren> = ({
   backgroundColor,
-  label,
   size,
   mode,
   ovaled,
   handleOnClick,
+  children
 }) => {
   return (
     <button
@@ -26,7 +27,7 @@ const TagPresentational: React.FC<TagPresentationalProps> = ({
       style={{ backgroundColor }}
       onClick={handleOnClick}
     >
-      {label}
+      {children}
     </button>
   );
 };

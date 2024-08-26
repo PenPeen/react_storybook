@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import TagContainer from "./TagContainer";
+import parse from "html-react-parser";
 
 const meta = {
   title: "Atoms/Tag",
@@ -21,20 +22,20 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    label: "Tag",
+    children: parse('Tag'),
   },
 };
 
 export const Secondary: Story = {
   args: {
     primary: false,
-    label: "Tag",
+    children: parse('Tag'),
   },
 };
 
 export const Oval: Story = {
   args: {
-    label: "Tag",
+    children: parse('Tag'),
     oval: true,
   },
 };
@@ -42,20 +43,20 @@ export const Oval: Story = {
 export const Large: Story = {
   args: {
     size: "large",
-    label: "Tag",
+    children: parse('Tag'),
   },
 };
 
 export const Small: Story = {
   args: {
     size: "small",
-    label: "Tag",
+    children: parse('Tag'),
   },
 };
 
 export const bgRed: Story = {
   args: {
-    label: "Tag",
+    children: parse('Tag'),
     backgroundColor: "red",
   },
 };
