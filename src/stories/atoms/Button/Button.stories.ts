@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
+import parse from "html-react-parser";
 import { Button } from "./Button";
 
 const meta = {
@@ -18,62 +19,80 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    label: "Button",
+    children: parse(`
+      Button
+    `),
   },
 };
 
 export const Success: Story = {
   args: {
     type: "success",
-    label: "Button",
+    children: parse(`
+      Button
+    `),
   },
 };
 
 export const Warning: Story = {
   args: {
     type: "warning",
-    label: "Button",
+    children: parse(`
+      Button
+    `),
   },
 };
 
 export const Danger: Story = {
   args: {
     type: "danger",
-    label: "Button",
+    children: parse(`
+      Button
+    `),
   },
 };
 
 export const Neutral: Story = {
   args: {
     type: "neutral",
-    label: "Button",
+    children: parse(`
+      Button
+    `),
   },
 };
 
 export const Large: Story = {
   args: {
     size: "large",
-    label: "Button",
+    children: parse(`
+      Button
+    `),
   },
 };
 
 export const Small: Story = {
   args: {
     size: "small",
-    label: "Button",
+    children: parse(`
+      Button
+    `),
   },
 };
 
 export const Radius: Story = {
   args: {
-    label: "Button",
+    children: parse(`
+      Button
+    `),
     isRadius: true,
   },
 };
 
 export const Full: Story = {
   args: {
-    label: "Button",
+    children: parse(`
+      Button
+    `),
     isFull: true,
   }
 }
