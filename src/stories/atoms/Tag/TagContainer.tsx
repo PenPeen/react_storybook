@@ -1,3 +1,4 @@
+import { PropsWithChildren } from "react";
 import styles from "./tag.module.css";
 import TagPresentational from "./TagPresentational";
 
@@ -5,18 +6,18 @@ type TagContainerProps = {
   primary?: boolean;
   oval?: boolean;
   backgroundColor?: string;
-  label: string;
   size?: "small" | "medium" | "large";
   onClick?: () => void;
+  children: React.ReactNode,
 };
 
-const TagContainer: React.FC<TagContainerProps> = ({
+const TagContainer: React.FC<TagContainerProps & PropsWithChildren> = ({
   primary = true,
   oval = false,
   size = "medium",
   backgroundColor,
-  label,
   onClick,
+  children,
 }) => {
   const mode = primary ? styles.a_tag__primary : styles.a_tag__secondary;
   const ovaled = oval ? styles.a_tag__oval : undefined;
@@ -26,10 +27,11 @@ const TagContainer: React.FC<TagContainerProps> = ({
       mode={mode}
       ovaled={ovaled}
       backgroundColor={backgroundColor}
-      label={label}
       size={size}
       handleOnClick={onClick}
-    />
+    >
+      {children}
+    </TagPresentational>
   );
 };
 
